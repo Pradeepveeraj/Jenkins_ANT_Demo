@@ -1,0 +1,15 @@
+node {
+    stage('Retrieve Salesforce Metadata') {
+        dir('D:/ANT_HOME') {
+            // Specify the desired Ant version here
+            bat 'ant retrieveCode'
+        }
+    }
+    
+    stage('Deploy Salesforce Metadata check') {
+        dir('D:/ANT_HOME') {
+            // Specify the desired Ant version here
+            bat 'ant deployCodeCheckOnly'
+        }
+    }
+}
